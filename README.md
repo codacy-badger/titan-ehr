@@ -1,1 +1,1 @@
-# titan-ehr
+# TitanEHR
