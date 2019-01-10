@@ -20,7 +20,7 @@ const Homepage = () => (
     <div className="content-header">Homepage</div>
     <div className="content homepage">
       <div className="homepage__header">Welcome to TitanEHR!</div>
-      <div />
+      <div>Placeholder</div>
     </div>
   </div>
 );
