@@ -8,15 +8,33 @@ body {
   overflow-y: scroll;
 }
 
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
 :root {
   --navigation: #2f4358;
   --navigation-hover: #546a83;
   --navigation-subtitle: #1abc9c;
   --content-background: #eff2f5;
+  --header-border: #d2dae3;
   --header-background: #ffffff;
   --heading-text: #2f4358;
   --white-text: #ffffff;
   --divider: #1e2c3a;
+
+  --core-padding: 20px;
+  --header-text-size: 26px;
+  --header-height: 50px;
 }
 
 .core-grid-container {
@@ -25,4 +43,27 @@ body {
   grid-template-columns: 250px 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: '. .';
+}
+
+.content-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: var(--header-height) 1fr;
+  grid-template-areas: '.' '.';
+}
+
+.content {
+  background-color: var(--content-background);
+  padding-left: var(--core-padding);
+}
+
+.content-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: var(--header-text-size);
+  color: var(--heading-text);
+  background-color: var(--header-background);
+  border-bottom: 1px solid var(--header-border);
+  padding-left: var(--core-padding);
 }

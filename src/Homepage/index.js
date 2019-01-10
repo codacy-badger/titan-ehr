@@ -6,9 +6,7 @@ import React from 'react';
 /** *******************************************************************
  * Relative Imports
  ******************************************************************* */
-import Sidebar from '../Navigation/Sidebar';
-import Homepage from '../Homepage';
-// import routes from '../store/routes';
+import './index.css';
 
 /** *******************************************************************
  * TypeScript Interfaces
@@ -17,14 +15,24 @@ import Homepage from '../Homepage';
 /** *******************************************************************
  * React Component
  ******************************************************************* */
-const Application = () => (
-  <div className="core-grid-container">
-    <Sidebar />
-    <Homepage />
+const Homepage = () => (
+  <div className="content-grid-container">
+    <div className="content-header">Homepage</div>
+    <div className="content homepage">
+      <div className="homepage__header">Welcome to TitanEHR!</div>
+      <div />
+    </div>
   </div>
 );
 
 /** *******************************************************************
  * Redux and Exports
  ******************************************************************* */
-export default Application;
+// const mapStateToProps = state => ({});
+// const mapDispatchToProps = dispatch => ({});
+
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(Homepage);
+export default Homepage;

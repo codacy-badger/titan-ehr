@@ -1,9 +1,7 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-
   height: 100%;
-
   background-color: var(--navigation);
 }
 
@@ -13,15 +11,15 @@
   align-items: center;
   box-sizing: border-box;
 
-  height: 50px;
-  padding-left: 20px;
+  height: var(--header-height);
+  padding-left: var(--core-padding);
 
   color: var(--white-text);
   border-bottom: 1px solid var(--divider);
 }
 
 .sidebar__logo {
-  font-size: 26px;
+  font-size: var(--header-text-size);
 }
 
 .sidebar__title {

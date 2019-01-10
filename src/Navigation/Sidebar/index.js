@@ -28,7 +28,7 @@ const Sidebar = () => (
     <div className="sidebar__section">Medication</div>
     <div className="sidebar__section">Labs</div>
     <div className="sidebar__section">Billing</div>
-    <div className="sidebar__section">Incident</div>
+    <div className="sidebar__section">Incidents</div>
     <div className="sidebar__section">Administration</div>
   </div>
 );
