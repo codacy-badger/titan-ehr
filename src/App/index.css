@@ -10,9 +10,13 @@ body {
 
 :root {
   --navigation: #2f4358;
+  --navigation-hover: #546a83;
+  --navigation-subtitle: #1abc9c;
   --content-background: #eff2f5;
   --header-background: #ffffff;
   --heading-text: #2f4358;
+  --white-text: #ffffff;
+  --divider: #1e2c3a;
 }
 
 .core-grid-container {
