@@ -1,0 +1,8 @@
+.homepage {
+  padding-top: 15px;
+  background-color: var(--content-background);
+}
+
+.homepage__header {
+  font-size: 20px;
+}

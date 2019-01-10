@@ -1,5 +1,37 @@
 .sidebar {
-  height: '100%';
-  width: '100%';
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background-color: var(--navigation);
+}
+
+.sidebar > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+
+  height: var(--header-height);
+  padding-left: var(--core-padding);
+
+  color: var(--white-text);
+  border-bottom: 1px solid var(--divider);
+}
+
+.sidebar__logo {
+  font-size: var(--header-text-size);
+}
+
+.sidebar__title {
+  font-weight: 600;
+  color: var(--white-text);
+}
+
+.sidebar__subtitle {
+  color: var(--navigation-subtitle);
+}
+
+.sidebar__section:hover {
+  transition: background-color 0.5s ease;
+  background-color: var(--navigation-hover);
 }
