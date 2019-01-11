@@ -6,9 +6,8 @@ import React from 'react';
 /** *******************************************************************
  * Relative Imports
  ******************************************************************* */
+import routes from '../store/routes';
 import Sidebar from '../Navigation/Sidebar';
-import Homepage from '../Homepage';
-// import routes from '../store/routes';
 
 /** *******************************************************************
  * TypeScript Interfaces
@@ -20,7 +19,7 @@ import Homepage from '../Homepage';
 const Application = () => (
   <div className="core-grid-container">
     <Sidebar />
-    <Homepage />
+    {routes}
   </div>
 );
 
