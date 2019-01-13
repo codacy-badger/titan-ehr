@@ -35,3 +35,7 @@
   transition: background-color 0.5s ease;
   background-color: var(--navigation-hover);
 }
+
+.sidebar__section-active {
+  background-color: var(--navigation-hover);
+}

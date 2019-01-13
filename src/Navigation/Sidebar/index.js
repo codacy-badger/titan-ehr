@@ -2,11 +2,16 @@
  * Absolute Imports
  ******************************************************************* */
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 /** *******************************************************************
  * Relative Imports
  ******************************************************************* */
 import './index.css';
+import {sidebarTabs} from '../constants';
+import {getExpandedTab} from '../selectors';
+import {expandSidebarTab} from '../actions';
 
 /** *******************************************************************
  * TypeScript Interfaces
@@ -15,32 +20,46 @@ import './index.css';
 /** *******************************************************************
  * React Component
  ******************************************************************* */
-const Sidebar = () => (
-  <div className="sidebar">
-    <div className="sidebar__logo">
-      <span className="sidebar__title">Titan</span>
-      <span className="sidebar__subtitle">EHR</span>
+const Sidebar = ({expandedTab, expandTab}) => {
+  const sidebarMenu = sidebarTabs.map(tab => (
+    <div
+      className={
+        expandedTab === tab.title ? 'sidebar__section sidebar__section-active' : 'sidebar__section'
+      }
+      onClick={() => expandTab(tab.title)}
+    >
+      {tab.title}
     </div>
-    <div className="sidebar__section">Inventory</div>
-    <div className="sidebar__section">Patients</div>
-    <div className="sidebar__section">Scheduling</div>
-    <div className="sidebar__section">Imaging</div>
-    <div className="sidebar__section">Medication</div>
-    <div className="sidebar__section">Labs</div>
-    <div className="sidebar__section">Billing</div>
-    <div className="sidebar__section">Incidents</div>
-    <div className="sidebar__section">Administration</div>
-  </div>
-);
+  ));
+
+  return (
+    <div className="sidebar">
+      <div className="sidebar__logo">
+        <span className="sidebar__title">Titan</span>
+        <span className="sidebar__subtitle">EHR</span>
+      </div>
+      {sidebarMenu}
+    </div>
+  );
+};
 
 /** *******************************************************************
  * Redux and Exports
  ******************************************************************* */
-// const mapStateToProps = state => ({});
-// const mapDispatchToProps = dispatch => ({});
+Sidebar.propTypes = {
+  expandedTab: PropTypes.string,
+  expandTab: PropTypes.func,
+};
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Sidebar);
-export default Sidebar;
+const mapStateToProps = state => ({
+  expandedTab: getExpandedTab(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+  expandTab: tab => dispatch(expandSidebarTab(tab)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Sidebar);
