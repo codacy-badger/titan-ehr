@@ -4,11 +4,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from 'react-router-dom';
+import {Provider} from 'react-redux';
 
 /** *******************************************************************
  * Relative Imports
  ******************************************************************* */
 import App from './App';
+import store from './store';
 import './App/normalize.css';
 import './App/index.css';
 
@@ -20,9 +22,11 @@ import './App/index.css';
  * React Component
  ******************************************************************* */
 const application = (
-  <Router>
-    <App />
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 );
 
 /** *******************************************************************

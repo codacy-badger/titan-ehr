@@ -7,6 +7,7 @@ import React from 'react';
  * Relative Imports
  ******************************************************************* */
 import './index.css';
+import {paragraphFirst, paragraphSecond} from './constants';
 
 /** *******************************************************************
  * TypeScript Interfaces
@@ -20,7 +21,10 @@ const Homepage = () => (
     <div className="content-header">Homepage</div>
     <div className="content homepage">
       <div className="homepage__header">Welcome to TitanEHR!</div>
-      <div />
+      <div>
+        <p>{paragraphFirst}</p>
+        <p>{paragraphSecond}</p>
+      </div>
     </div>
   </div>
 );
