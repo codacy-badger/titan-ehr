@@ -35,6 +35,7 @@ body::-webkit-scrollbar-thumb {
   --core-padding: 20px;
   --header-text-size: 26px;
   --header-height: 50px;
+  --submenu-height: 30px;
 }
 
 .core-grid-container {
