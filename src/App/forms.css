@@ -1,0 +1,11 @@
+.label {
+  margin-bottom: var(--label-margin-bottom);
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.touched {
+  border: 1px solid green;
+}
