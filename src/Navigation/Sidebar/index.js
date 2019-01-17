@@ -23,10 +23,6 @@ import {expandSidebarTab} from '../actions';
  ******************************************************************* */
 
 class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleExpandTab = title => {
     const {expandedTab, expandTab} = this.props;
 
@@ -35,9 +31,8 @@ class Sidebar extends Component {
   };
 
   handleSubMenuLinkClick = subMenuItem => {
-    const {expandTab, history} = this.props;
+    const {history} = this.props;
 
-    // expandTab(subMenuItem.title);
     return history.push(subMenuItem.path);
   };
 

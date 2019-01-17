@@ -47,6 +47,7 @@
   height: var(--submenu-height);
   background-color: #3a4d63;
   border: none;
+  font-size: 15px;
 }
 
 .sidebar__subSection:hover {
@@ -56,4 +57,5 @@
 
 .sidebar__active {
   background-color: var(--navigation-hover);
+  border-bottom: 1px solid var(--divider);
 }
