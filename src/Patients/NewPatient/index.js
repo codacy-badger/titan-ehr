@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
  ******************************************************************* */
 import './index.css';
 import {emailValidationRegex} from '../constants';
+import {addNewPatient} from '../actions';
 
 /** *******************************************************************
  * TypeScript Interfaces
@@ -187,6 +188,7 @@ class NewPatient extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const {addPatient} = this.props;
 
     const formData = {
       ...this.state,
@@ -198,7 +200,8 @@ class NewPatient extends Component {
       }
     }
 
-    if (this.state.formError) this.setState({formError: ''});
+    addPatient(formData);
+    this.state = this.initialState;
   };
 
   inputUIFeedback = fieldName => {
@@ -471,7 +474,9 @@ class NewPatient extends Component {
  * Redux and Exports
  ******************************************************************* */
 const mapStateToProps = state => ({});
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  addPatient: formData => dispatch(addNewPatient(formData)),
+});
 
 export default connect(
   mapStateToProps,
