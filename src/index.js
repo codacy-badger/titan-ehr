@@ -13,6 +13,7 @@ import App from './App';
 import store from './store';
 import './App/normalize.css';
 import './App/index.css';
+import './App/forms.css';
 
 /** *******************************************************************
  * TypeScript Interfaces
