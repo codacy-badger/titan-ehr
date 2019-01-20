@@ -23,10 +23,6 @@ import {expandSidebarTab} from '../actions';
  ******************************************************************* */
 
 class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleExpandTab = title => {
     const {expandedTab, expandTab} = this.props;
 
@@ -35,9 +31,8 @@ class Sidebar extends Component {
   };
 
   handleSubMenuLinkClick = subMenuItem => {
-    const {expandTab, history} = this.props;
+    const {history} = this.props;
 
-    // expandTab(subMenuItem.title);
     return history.push(subMenuItem.path);
   };
 
@@ -48,6 +43,7 @@ class Sidebar extends Component {
 
       return (
         <div
+          key={subMenuItem.title}
           onClick={() => this.handleSubMenuLinkClick(subMenuItem)}
           className={expanded ? 'sidebar__subSection sidebar__active' : 'sidebar__subSection'}
         >
@@ -65,7 +61,7 @@ class Sidebar extends Component {
       const expanded = expandedTab === title;
 
       return (
-        <Fragment>
+        <Fragment key={title}>
           <div
             className={expanded ? 'sidebar__section sidebar__active' : 'sidebar__section'}
             onClick={() => this.handleExpandTab(title)}

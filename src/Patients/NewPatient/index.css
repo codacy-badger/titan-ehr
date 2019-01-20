@@ -1,0 +1,11 @@
+.new-patient {
+  padding-top: 15px;
+  background-color: var(--content-background);
+}
+
+.new-patient__grid-container {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  grid-template-rows: 1auto 1auto 1auto 1auto 1auto 1auto 1auto 1auto 1auto 1auto;
+  grid-template-areas: '. .' '. .' '. .' '. .' '. .' '. .' '. .' '. .' '. .' '. .';
+}

@@ -1,0 +1,3 @@
+export const ADD_NEW_PATIENT_REQUEST = 'newPatient/ADD_NEW_PATIENT_REQUEST';
+export const ADD_NEW_PATIENT_SUCCESS = 'newPatient/ADD_NEW_PATIENT_SUCCESS';
+export const ADD_NEW_PATIENT_ERROR = 'newPatient/ADD_NEW_PATIENT_ERROR';
