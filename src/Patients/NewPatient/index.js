@@ -201,7 +201,7 @@ class NewPatient extends Component {
     }
 
     addPatient(formData);
-    this.state = this.initialState;
+    this.setState(this.initialState);
   };
 
   inputUIFeedback = fieldName => {

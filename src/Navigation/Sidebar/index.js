@@ -43,6 +43,7 @@ class Sidebar extends Component {
 
       return (
         <div
+          key={subMenuItem.title}
           onClick={() => this.handleSubMenuLinkClick(subMenuItem)}
           className={expanded ? 'sidebar__subSection sidebar__active' : 'sidebar__subSection'}
         >
@@ -60,7 +61,7 @@ class Sidebar extends Component {
       const expanded = expandedTab === title;
 
       return (
-        <Fragment>
+        <Fragment key={title}>
           <div
             className={expanded ? 'sidebar__section sidebar__active' : 'sidebar__section'}
             onClick={() => this.handleExpandTab(title)}

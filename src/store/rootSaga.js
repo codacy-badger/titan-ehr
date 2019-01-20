@@ -6,11 +6,11 @@ import {all} from 'redux-saga/effects';
 /** *******************************************************************
  * Relative Imports
  ******************************************************************* */
-import navigationSaga from '../Navigation/sagas';
+import patientsSaga from '../Patients/sagas';
 
 /** *******************************************************************
  * Redux and Exports
  ******************************************************************* */
 export default function* rootSaga() {
-  yield all([navigationSaga()]);
+  yield all([patientsSaga()]);
 }

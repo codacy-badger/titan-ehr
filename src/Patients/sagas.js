@@ -17,15 +17,13 @@ import {API_BASE_URL} from '../utilities';
  ******************************************************************* */
 function* addNewPatient(action) {
   try {
-    const newPatientCall = yield call(() => axios
-      .post(`${API_BASE_URL}/new/patient`, action.formData)
-      .then(response => response)
-      .catch(err => err));
-
+    // const newPatientCall = yield call(() => axios
+    //   .post(`${API_BASE_URL}/new/patient`, action.formData)
+    //   .then(response => response)
+    //   .catch(err => err));
     // HANDLE RESULT OF CALL AND ANY ERRORS
   } catch (err) {
-    console.log('Encountered an Error: ', err);
-    yield put({type: t.ADD_NEW_PATIENT_ERROR});
+    yield put({type: t.ADD_NEW_PATIENT_ERROR, error: err});
   }
 }
 
